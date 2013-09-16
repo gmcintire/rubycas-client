@@ -12,7 +12,7 @@ module CASClient
         @@fake_extra_attributes = nil
         
         class << self
-          def filter(controller)
+          def before(controller)
             raise "Cannot use the CASClient filter because it has not yet been configured." if config.nil?
             
             if @@fake_user
